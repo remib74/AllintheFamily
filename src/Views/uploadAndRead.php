@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <link href="css/style.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="js/wa-mediabox.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/wa-mediabox.css" />
     <script src="js/message.js"></script>
 </head>
 
@@ -27,7 +29,7 @@ if (file_exists('xml/dataXML.xml')) {
 if($p_cnt>10){
 
     echo "too much message aboard";
-    $xmlRemove = simplexml_load_file('xml/dataXML.xml');
+    //$xmlRemove = simplexml_load_file('xml/dataXML.xml');
     list($xmlRem) = $xml->xpath("message");
     unset($xmlRem[0]);
    
@@ -41,7 +43,7 @@ $xml->asXML("xml/dataXML.xml");
       $imgSrc=$xml->message[$i]->fichier;
       echo $xml->message[$i]->pseudo.'<br/>' ;
       echo $xml->message[$i]->msgtxt.'<br/>'; 
-      echo "<a href='$imgSrc'><img src='$imgSrc' width='200px'></a>'".'<br/>';
+      echo "<a href='$imgSrc'  data-mediabox='my-gallery-name' data-title='Sample image'><img src='$imgSrc' width='200px'></a>'".'<br/>';
     } 
 
 } 

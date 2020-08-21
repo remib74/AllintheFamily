@@ -1,0 +1,9 @@
+
+RewriteEngine on
+RewriteCond %{REQUEST_URI} /(index)(\..{3,4})?$ [NC]
+RewriteRule ^.* http://localhost/allInTheFamily/allInTheFamily [R=301,L]
+RewriteCond %{REQUEST_FILENAME} !^/css/.*$
+RewriteCond %{REQUEST_FILENAME} !^/js/.*$
+RewriteCond %{REQUEST_FILENAME} !^/uploads/.*$
+RewriteCond %{REQUEST_FILENAME} !^/src/inc/.*$
+RewriteRule . index.php [QSA,L]
