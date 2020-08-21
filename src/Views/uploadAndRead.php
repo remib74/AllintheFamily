@@ -51,6 +51,8 @@ $xml->asXML("xml/dataXML.xml");
 else {
     exit('Echec lors de l\'ouverture du fichier test.xml.');
 }
+
+
 ?>
 
         </div>
