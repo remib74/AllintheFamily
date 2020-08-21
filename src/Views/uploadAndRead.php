@@ -24,7 +24,7 @@ if (file_exists('xml/dataXML.xml')) {
     
 ///////////////////////////////////////////////////////////////////////////////////////
 
-if($p_cnt>8){
+if($p_cnt>20){
 
     echo "too much message aboard";
     $xmlRemove = simplexml_load_file('xml/dataXML.xml');
