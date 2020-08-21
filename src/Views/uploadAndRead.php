@@ -24,7 +24,7 @@ if (file_exists('xml/dataXML.xml')) {
     
 ///////////////////////////////////////////////////////////////////////////////////////
 
-if($p_cnt>20){
+if($p_cnt>10){
 
     echo "too much message aboard";
     $xmlRemove = simplexml_load_file('xml/dataXML.xml');
@@ -43,9 +43,6 @@ $xml->asXML("xml/dataXML.xml");
       echo $xml->message[$i]->msgtxt.'<br/>'; 
       echo "<a href='$imgSrc'><img src='$imgSrc' width='200px'></a>'".'<br/>';
     } 
-     
-
-
 
 } 
 
