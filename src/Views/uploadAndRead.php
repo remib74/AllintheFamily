@@ -18,9 +18,24 @@
 if (file_exists('xml/dataXML.xml')) {
     $xml = simplexml_load_file('xml/dataXML.xml');
     
+
     
     $p_cnt = count($xml->message)-1;
     
+///////////////////////////////////////////////////////////////////////////////////////
+
+if($p_cnt>8){
+
+    echo "too much message aboard";
+    $xmlRemove = simplexml_load_file('xml/dataXML.xml');
+    list($xmlRem) = $xml->xpath("message");
+    unset($xmlRem[0]);
+   
+}
+
+$xml->asXML("xml/dataXML.xml"); 
+////////////////////////////////////////////////////////////////////////////////////////
+
     for($i = $p_cnt; $i > 0; $i--) {
       $message = $xml->message[$i];
       $imgSrc=$xml->message[$i]->fichier;
@@ -29,7 +44,12 @@ if (file_exists('xml/dataXML.xml')) {
       echo "<a href='$imgSrc'><img src='$imgSrc' width='200px'></a>'".'<br/>';
     } 
      
-} else {
+
+
+
+} 
+
+else {
     exit('Echec lors de l\'ouverture du fichier test.xml.');
 }
 ?>
