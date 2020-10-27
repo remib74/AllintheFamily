@@ -6,4 +6,4 @@ RewriteCond %{REQUEST_FILENAME} !^/css/.*$
 RewriteCond %{REQUEST_FILENAME} !^/js/.*$
 RewriteCond %{REQUEST_FILENAME} !^/uploads/.*$
 RewriteCond %{REQUEST_FILENAME} !^/src/inc/.*$
-RewriteRule . index.php [QSA,L]
+ RewriteRule (.*) index.html [QSA,L]
